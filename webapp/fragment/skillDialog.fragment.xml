@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Select Skills">
+		<content>
+			<SearchField width="100%" id="fragsearchId" placeholder="Search by Skill...." search="handleChangeskillSearch"/>
+			<FlexBox id="errorMessageId"/>
+			<List id="CheckListId" mode="MultiSelect" select="onCheckListSelected">
+				<StandardListItem title="Select All" type="Active"/>
+			</List>
+			<List id="ProductList" items="{/Employee}" mode="MultiSelect" select="onListSelected">
+				<items>
+					<StandardListItem title="{Skill}" type="Active"/>
+				</items>
+			</List>
+			<!--<List id="ProductList" items="{localSkillModel>/}" mode="MultiSelect" select = "onListSelected">-->
+			<!--	<StandardListItem title="{localSkillModel>title}" type = "Active"/>-->
+			<!--</List>-->
+		</content>
+		<buttons>
+			<Button text="Apply" type="Emphasized" press="onDialogBtnPressed"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

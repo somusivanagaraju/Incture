@@ -1,0 +1,226 @@
+<mvc:View controllerName="com.displayMasterDetail1.controller.detail" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:u="sap.uxap" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<Page title="Employee - {EmployeeModel>/EmployeeData/0/Name}">
+		<content>
+			<ObjectHeader id="objectHeader" title="{EmployeeModel>/EmployeeData/0/Name}" titleActive="true" titlePress="onShowDetailPopover"
+				responsive="true" number="{ path: 'EmployeeModel>/EmployeeData/0/PSID',formatter: '.formatter.currencyFormateOne'}"
+				numberState="{= ${EmployeeModel>/EmployeeData/0/PSID} > 1000 ? 'Success' : 'Warning'}">
+				<attributes>
+					<ObjectAttribute text="{EmployeeModel>/EmployeeData/0/Skill}"/>
+				</attributes>
+			</ObjectHeader>
+			<u:ObjectPageLayout id="ObjectPageLayout">
+				<u:sections>
+					<u:ObjectPageSection title="General Information">
+						<u:ObjectPageSubSection>
+							<u:blocks>
+								<!--<Text text="testing"/>-->
+								<!--<VBox class="sapUiSmallMargin">-->
+								<!--<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"
+										labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+										columnsL="1" columnsM="1" singleContainerFullSize="false">-->
+								<!--<f:SimpleForm id="SimpleFormDisplay480_12120" labelMinWidth="192" adjustLabelSpan="true" maxContainerCols="4" editable="true"
+										layout="ResponsiveGridLayout" title="" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="4" columnsL="2" columnsM="2"
+										class="titleAdjust" singleContainerFullSize="false">-->
+								<VBox class="sapUiSmallMargin">
+									<f:SimpleForm title="Information" id="SimpleFormDisplay480_12120" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0"
+										adjustLabelSpan="false" labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false">
+										<f:content>
+											<core:Title/>
+											<Label text="PSID"/>
+											<Text id="nameText" text="{EmployeeModel>/EmployeeData/0/PSID}"/>
+											<Label text="Name"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Name}"/>
+											<Label text="Grade"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Grade}"/>
+											<Label text="Skill"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Skill}"/>
+											<core:Title/>
+											<Label text="E-mail"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Email}"/>
+											<Label text="Supervisor"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Supervisor}"/>
+											<Label text="Reporting Manager"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Reporting Manager}"/>
+											<!--<Label text="Past Experience"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/PastExperience}"/>-->
+											<!--<Label text="Current Experience"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/CurrenctExperience}"/>-->
+											<core:Title/>
+											<!--<Label text="Total Experience"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/Total-Exp}"/>-->
+											<!--<Label text="Employee Status"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/EmployeeStatus}"/>-->
+											<!--<Label text="Hire Date"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/Hire-Date}"/>-->
+											<!--<Label text="Pool Description"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/PoolDescription}"/>-->
+											<!--<Label text="Department ID"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/DepartmentID}"/>-->
+											<!--<Label text="Business Unit"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/BusinessUnit}"/>-->
+											<!--<Label text="Line Of Business"/>-->
+											<!--<Text text="{EmployeeModel>/EmployeeData/0/LineOfBusiness}"/>-->
+										</f:content>
+									</f:SimpleForm>
+								</VBox>
+							</u:blocks>
+						</u:ObjectPageSubSection>
+					</u:ObjectPageSection>
+					<!--<u:ObjectPageSection title="Employee Status">-->
+					<!--	<u:ObjectPageSubSection>-->
+					<!--		<u:blocks>-->
+					<!--<Text text="testing"/>-->
+					<!--			<VBox class="sapUiSmallMargin">-->
+					<!--				<f:SimpleForm id="SimpleFormDis" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"-->
+					<!--					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"-->
+					<!--					columnsL="1" columnsM="1" singleContainerFullSize="false">-->
+					<!--					<f:content>-->
+					<!--						<Label text="Employee Status"/>-->
+					<!--						<Text text="{EmployeeModel>/EmployeeData/0/EmployeeStatus}"/>-->
+					<!--						<Label text="Hire Date"/>-->
+					<!--						<Text text="{EmployeeModel>/EmployeeData/0/Hire-Date}"/>-->
+					<!--						<Label text="Pool Description"/>-->
+					<!--						<Text text="{EmployeeModel>/EmployeeData/0/PoolDescription}"/>-->
+					<!--						<Label text="Department ID"/>-->
+					<!--						<Text text="{EmployeeModel>/EmployeeData/0/DepartmentID}"/>-->
+					<!--						<Label text="Business Unit"/>-->
+					<!--						<Text text="{EmployeeModel>/EmployeeData/0/BusinessUnit}"/>-->
+					<!--						<Label text="Line Of Business"/>-->
+					<!--						<Text text="{EmployeeModel>/EmployeeData/0/LineOfBusiness}"/>-->
+					<!--					</f:content>-->
+					<!--				</f:SimpleForm>-->
+					<!--			</VBox>-->
+					<!--		</u:blocks>-->
+					<!--	</u:ObjectPageSubSection>-->
+					<!--</u:ObjectPageSection>-->
+					<u:ObjectPageSection title="Employee Status">
+						<u:ObjectPageSubSection>
+							<u:blocks>
+							
+								<VBox class="sapUiSmallMargin">
+									
+									<f:SimpleForm title="Status" id="SimpleFormDisplay" columnsM="2" columnsL="2" emptySpanM="0" emptySpanL="0" adjustLabelSpan="false"
+										labelSpanM="12" labelSpanL="4" layout="ResponsiveGridLayout" editable="false">
+									
+										<f:content>
+											<core:Title text=""/>
+											<Label text="Employee Status"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/EmployeeStatus}"/>
+											<Label text="Hire Date"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Hire-Date}"/>
+											<!--	<Label text="Business Unit"/> <Text text="{DialogModel>/Employeeselected/0/Business Unit}"/> <Label text="LOB Group"/> <Text text="{DialogModel>/Employeeselected/0/LOB Group}"/>-->
+											<Label text="Current Experience"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/CurrenctExperience}"/>
+											<Label text="Past Experience"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/PastExperience}"/>
+											<core:Title text=""/>
+											<Label text="Location"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/LocationCatagory}"/>
+											<Label text="City"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/City}"/>
+											<Label text="Country"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Country}"/>
+											<Label text="Total Experience"/>
+											<Text text="{EmployeeModel>/EmployeeData/0/Total-Exp}"/>
+										</f:content>
+									</f:SimpleForm>
+								</VBox>
+								<!--	<Text text="testing"/>
+									<VBox class="sapUiSmallMargin">
+										<f:SimpleForm id="SimpleForm" editable="false" layout="ResponsiveGridLayout" title="" labelSpanXL="3" labelSpanL="3"
+											labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+											columnsL="1" columnsM="1" singleContainerFullSize="false">
+											<f:content>
+												<Label text="Past Experience"/>
+												<Text text="{EmployeeModel>/EmployeeData/0/PastExperience}"/>
+												<Label text="Current Experience"/>
+												<Text text="{EmployeeModel>/EmployeeData/0/CurrenctExperience}"/>
+												<Label text="Total Experience"/>
+												<Text text="{EmployeeModel>/EmployeeData/0/Total-Exp}"/>
+											</f:content>
+										</f:SimpleForm>
+									</VBox>-->
+							</u:blocks>
+						</u:ObjectPageSubSection>
+					</u:ObjectPageSection>
+					<u:ObjectPageSection title="Project Details">
+						<u:ObjectPageSubSection>
+							<u:blocks>
+								<Table id="employeetable" class = "columnAlignment">
+									<headerToolbar>
+										<Toolbar>
+											<content>
+												<Title text="" level="H2"/>
+												<ToolbarSpacer/>
+												<Button icon="sap-icon://action-settings" press="onPersoButtonPressed" tooltip="Personalization Setting"/>
+											</content>
+										</Toolbar>
+									</headerToolbar>
+									<columns>
+										<Column id="idcolprojectID" width="auto">
+											<Text text="ProjectID"/>
+										</Column>
+										<Column id="idcolprojecttypr" minScreenWidth="Tablet" demandPopin="true" width="auto">
+											<Text text="ProjectName"/>
+										</Column>
+										<Column id="idcolskill" minScreenWidth="Tablet" demandPopin="true" width="auto">
+											<Text text="Assignment"/>
+										</Column>
+										<Column visible="false" id="idcolcurexp" width="auto">
+											<Text text="Project Status"/>
+										</Column>
+										<Column visible="false" id="idcolloccat" minScreenWidth="Tablet" demandPopin="true" width="auto">
+											<Text text="Project Role"/>
+										</Column>
+										<Column visible="false" id="idcolreportmnger" width="auto">
+											<Text text="Task type"/>
+										</Column>
+										<Column id="idcolcust" minScreenWidth="Tablet" demandPopin="true" width="auto">
+											<Text text="Customer"/>
+										</Column>
+										<Column id="idcolPM" minScreenWidth="Tablet" demandPopin="true" width="auto">
+											<Text text="Project Manager"/>
+										</Column>
+										<Column visible="false" id="idcolPMID" minScreenWidth="Tablet" demandPopin="true" width="auto">
+											<Text text="Project Manager PSID"/>
+										</Column>
+										<Column visible="true" id="idcolStdate" minScreenWidth="Tablet" demandPopin="true" width="auto">
+											<Text text="StartDate"/>
+										</Column>
+										<Column visible="true" id="idcolenddate" minScreenWidth="Tablet" demandPopin="true" width="auto">
+											<Text text="EndDate"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem>
+											<cells>
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectID}"/>
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectName}"/>
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectType}"/>
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectStatus}" />
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectRole}" />
+												<Text text="{EmployeeModel>/EmployeeData/0/TaskType}"/>
+												<Text text="{EmployeeModel>/EmployeeData/0/Customer}"/>
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectManager}" />
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectManagerPSID}" />
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectStartdate}" />
+												<Text text="{EmployeeModel>/EmployeeData/0/ProjectEnddate}" />
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</u:blocks>
+						</u:ObjectPageSubSection>
+					</u:ObjectPageSection>
+				</u:sections>
+			</u:ObjectPageLayout>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<!--<Button text="submit"/>-->
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

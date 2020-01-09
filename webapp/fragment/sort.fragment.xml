@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<ViewSettingsDialog confirm="handleConfirm">
+		<sortItems>
+			<ViewSettingsItem key="Name" text="Name"/>
+			<!--<ViewSettingsItem key="Skill" text="Skill"/>-->
+			<ViewSettingsItem key="PSID" text="PSID"/>
+			<ViewSettingsItem key="Skill" text="Skill"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

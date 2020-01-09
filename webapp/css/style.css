@@ -1,0 +1,40 @@
+/* Enter your custom styles here */
+/* Enter your custom styles here */
+
+.sapUiFormM .sapUiFormContainerTitle>.sapUiFormTitle {
+    height: 1rem;
+    line-height: 1rem;
+}
+
+
+.sapUxAPAnchorBarUpperCase .sapUxAPAnchorBarButton {
+    text-transform: none;
+}
+
+.sapUxAPObjectPageSectionTitle{
+	display: none;
+}
+
+/*.sapMOHR.sapMOHRBgSolid, .sapMOHR.sapMOHRBgTranslucent {*/
+/*    background: #346187;*/
+/*}*/
+
+/* <!~~~~~~~~~~~~~~~~ Table column  ~~~~~~~~~~~~~~~~~~~>   */
+.sapMListTblCell {
+    padding: .875rem .4rem;
+    vertical-align: top;
+    font-size: 0.875rem;
+}
+
+
+/*.columnAlignment .sapMTextBreakWord {
+    word-break: keep-all !important;
+}
+
+.columnAlignment .sapMTB-Transparent-CTX>.sapMTitleTB.sapMTitleStyleAuto {
+    font-size: 0.8rem !important;
+}
+
+.columnAlignment .sapMTitle {
+        text-overflow: initial !important;
+}*/

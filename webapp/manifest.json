@@ -1,0 +1,165 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "com.displayMasterDetail1",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/sap/opu/odata/sap/ZERP_RESOURCE_MGT_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": ""
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.displayMasterDetail1.view.app",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.displayMasterDetail1.i18n.i18n"
+				}
+			},
+			"": {
+				"dataSource": "mainService",
+				"settings": {
+					"metadataUrlParams": {
+						"sap-documentation": "heading"
+					},
+					"defaultBindingMode": "TwoWay"
+				}
+			},
+			"jdata": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/newdata.json"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.displayMasterDetail1.view",
+				"controlId": "idAppControl",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"notFound"
+					]
+				},
+				"async": true
+			},
+			"routes": [{
+					"pattern": "",
+					"name": "FullScreen",
+					"target": [
+						"FullScreen"
+					],
+					"subroutes":[{
+					"pattern": "master",
+					"name": "EmployeeMaster",
+					"target": [
+						"master"
+					]
+				},{
+					"pattern": "EmployeeData/{PSID}",
+					"name": "EmployeeDetail",
+					"target": [
+						"master",
+						"detail"
+					]
+				}]
+			}
+				
+			],
+			"targets": {
+				"FullScreen": {
+					"viewPath": "com.displayMasterDetail1.view",
+					"viewName": "FullScreen",
+					"viewType": "XML",
+					"controlId": "idAppControl",
+					"controlAggregation": "pages"
+				},
+				"SplitApp": {
+					"viewPath": "com.displayMasterDetail1.view",
+					"viewName": "SplitApp",
+					"viewType": "XML",
+					"controlId": "idAppControl",
+					"controlAggregation": "pages"
+				},
+				"master": {
+					"parent": "SplitApp",
+					"viewName": "master",
+					"viewType": "XML",
+					"controlId": "idSplitAppControl",
+					"controlAggregation": "masterPages"
+				},
+				"detail": {
+					"parent": "SplitApp",
+					"viewName": "detail",
+					"viewType": "XML",
+					"controlId": "idSplitAppControl",
+					"controlAggregation": "detailPages"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	}
+}
